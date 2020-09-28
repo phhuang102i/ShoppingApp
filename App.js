@@ -1,21 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React, { useEffect } from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { Router, Stack, Scene, Actions } from "react-native-router-flux";
+import Home from "./app/screens/Home";
+import Product from "./app/screens/Product";
+import Detail from "./app/screens/Detail";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Router>
+      <Stack key="root">
+        <Scene key="home" component={Home} title="Home" />
+        <Scene key="detail" component={Detail} title="Detail" />
+        <Scene key="product" component={Product} title="Product" />
+      </Stack>
+    </Router>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
