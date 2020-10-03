@@ -3,18 +3,24 @@ import { View, Text, ImageBackground } from "react-native";
 import styles from "../assets/styles/GridViewStyles";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { Actions } from "react-native-router-flux";
+import sampleimages from "./sampleimage";
 
 export default function ProductHeader(props) {
+  const imageidx = props.product_index
+    ? ["product_", String(props.product_index), "_images"].join("")
+    : "product_0_images";
+  console.log(imageidx);
+  const image = sampleimages[imageidx][0];
   return (
     <View style={styles.top_product_container}>
       <Text style={styles.sectionHeader}>{props.product_type}</Text>
 
       <TouchableOpacity
         style={styles.top_product_pic_container}
-        onPress={() => Actions.detail()}
+        onPress={() => Actions.detail({ product_index: props.product_index })}
       >
         <ImageBackground
-          source={require("../assets/media/product.png")}
+          source={image}
           style={styles.productlist_pic}
           imageStyle={{ resizeMode: "contain" }}
         />

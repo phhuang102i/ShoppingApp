@@ -6,6 +6,7 @@ import { Actions } from "react-native-router-flux";
 import { SectionGrid } from "react-native-super-grid";
 import sampledata from "../components/sampledata";
 import ProductHeader from "../components/ProductHeader";
+import sampleimages from "../components/sampleimage";
 
 export default function Product() {
   return (
@@ -18,16 +19,19 @@ export default function Product() {
         {
           title: "類別1",
           topdata: sampledata[0],
+          index: 1,
           data: sampledata.slice(1, 6),
         },
         {
           title: "類別2",
           topdata: sampledata[6],
+          index: 2,
           data: sampledata.slice(7, 12),
         },
         {
           title: "類別3",
           topdata: sampledata[12],
+          index: 3,
           data: sampledata.slice(13, 20),
         },
       ]}
@@ -49,7 +53,7 @@ export default function Product() {
             onPress={() => Actions.detail()}
           >
             <ImageBackground
-              source={require("../assets/media/product.png")}
+              source={sampleimages.random_images[Math.floor(Math.random() * 7)]}
               style={styles.productlist_pic}
               imageStyle={{ resizeMode: "contain" }}
             />
@@ -61,6 +65,7 @@ export default function Product() {
       )}
       renderSectionHeader={({ section }) => (
         <ProductHeader
+          product_index={section.index}
           product_type={section.title}
           product_data={section.topdata}
         />
