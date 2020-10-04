@@ -9,7 +9,7 @@ export default function ProductHeader(props) {
   const imageidx = props.product_index
     ? ["product_", String(props.product_index), "_images"].join("")
     : "product_0_images";
-  console.log(imageidx);
+
   const image = sampleimages[imageidx][0];
   return (
     <View style={styles.top_product_container}>

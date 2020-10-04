@@ -5,16 +5,20 @@ import { Router, Stack, Scene, Actions } from "react-native-router-flux";
 import Home from "./app/screens/Home";
 import Product from "./app/screens/Product";
 import Detail from "./app/screens/Detail";
+import BottomBar from "./app/components/BottomBar";
 
 export default function App() {
   return (
-    <Router>
-      <Stack key="root">
-        <Scene key="home" component={Home} title="Home" />
-        <Scene key="detail" component={Detail} title="Detail" />
-        <Scene key="product" component={Product} title="Product" />
-      </Stack>
-    </Router>
+    <>
+      <Router>
+        <Stack key="root">
+          <Scene key="home" component={Home} title="Home" />
+          <Scene key="detail" component={Detail} title="Detail" />
+          <Scene key="product" component={Product} title="Product" />
+        </Stack>
+      </Router>
+      <BottomBar />
+    </>
   );
 }
 
