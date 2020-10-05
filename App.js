@@ -6,15 +6,36 @@ import Home from "./app/screens/Home";
 import Product from "./app/screens/Product";
 import Detail from "./app/screens/Detail";
 import BottomBar from "./app/components/BottomBar";
+import Search from "./app/screens/Search";
+import Member from "./app/screens/Member";
+import Cart from "./app/screens/Cart";
 
 export default function App() {
   return (
     <>
       <Router>
         <Stack key="root">
-          <Scene key="home" component={Home} title="Home" />
-          <Scene key="detail" component={Detail} title="Detail" />
-          <Scene key="product" component={Product} title="Product" />
+          <Scene key="home" component={Home} title="Home" hideNavBar={true} />
+          <Scene key="detail" component={Detail} backTitle=" " />
+          <Scene
+            key="product"
+            component={Product}
+            title="Product"
+            hideNavBar={true}
+          />
+          <Scene
+            key="search"
+            component={Search}
+            title="Search"
+            hideNavBar={true}
+          />
+          <Scene key="cart" component={Cart} title="Cart" hideNavBar={true} />
+          <Scene
+            key="member"
+            component={Member}
+            title="Member"
+            hideNavBar={true}
+          />
         </Stack>
       </Router>
       <BottomBar />

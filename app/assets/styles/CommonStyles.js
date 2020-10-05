@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
   route_button: {
     borderColor: "lightblue",
     borderWidth: 1,
-    marginTop: 10,
+    marginTop: 100,
     width: 200,
     height: 50,
     justifyContent: "center",

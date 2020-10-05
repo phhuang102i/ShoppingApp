@@ -31,7 +31,7 @@ export default function BottomBar() {
       pressColor: "rgba(255, 255, 255, 0.16)",
     },
     {
-      key: "user",
+      key: "member",
       icon: "person",
       label: "會員",
       barColor: "dimgrey",
